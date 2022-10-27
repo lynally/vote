@@ -24,12 +24,6 @@ const Star = Schema({
   ticket:Number,
   history:Array
 });
-Star.methods.speak = function () {
-  var greeting = this.name
-      ? "star name is " + this.name
-      : "I don't have a name";
-  console.log(greeting);
-}
 
 mongoose.model('Star', Star);  // Schema编译成Model  (相当于Class（文档）)
 

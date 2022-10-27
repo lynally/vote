@@ -8,8 +8,6 @@ var mongoose = require('../db.js');//引入对象
 const AccountStuff = mongoose.model('People');//引入模型
 const StarStuff = mongoose.model('Star');//引入模型
 
-var util = require('util');
-
 // 投票
 apiv2.post('/vote', async function(req, res) {
   const param = req.body

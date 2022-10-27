@@ -2,7 +2,6 @@ const express = require('express')
 const bp = require('body-parser');
 var logger = require('morgan');
 const app  = express();
-var path = require('path');
 var schedule = require('node-schedule');
 
 var mongoose = require('./db.js');//引入对象
@@ -12,12 +11,6 @@ app.use(logger('dev'))
 
 
 app.use(bp.urlencoded({ extended: false }));
-// general config
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-
-// app.use('/api/v1', require('./controllers/api_v1'));
-// app.use('/api/v2', require('./controllers/api_v2'));
 
 app.use('/v1', require('./controllers/api_star'));
 app.use('/v2', require('./controllers/api'));
