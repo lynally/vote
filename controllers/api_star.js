@@ -61,7 +61,6 @@ let upload = multer({
 // 添加明星-excel
 apiv1.post('/addByExcel',async function(req, res) {
   console.log(req.file);
-  // 2.详细设置方式(配置)
   upload(req, res,async (err) => {
     if (err) {
       res.json({
@@ -82,8 +81,6 @@ apiv1.post('/addByExcel',async function(req, res) {
             name:name
           }
         })
-        console.log('val',vals)
-
         const {err,people} =await  StarStuff.insertMany(vals);
         if (err) return console.error(err);
       }
