@@ -19,8 +19,10 @@ db.on('disconnected', () => {
 mongoose.connect('mongodb://localhost/newDB');
 
 // 创建一个Schema
-var Star = Schema({
-  name: String
+const Star = Schema({
+  name: String,
+  ticket:Number,
+  history:Array
 });
 Star.methods.speak = function () {
   var greeting = this.name
@@ -30,6 +32,15 @@ Star.methods.speak = function () {
 }
 
 mongoose.model('Star', Star);  // Schema编译成Model  (相当于Class（文档）)
+
+
+// 创建一个Schema
+const People = Schema({
+  name: String,
+  ticket:Number,
+  history:Array
+});
+mongoose.model('People', People);  // Schema编译成Model  (相当于Class（文档）)
 
 
 
