@@ -21,8 +21,6 @@ app.get('/', function(req, res) {
 });
 
 
-
-
 function scheduleCronstyle(){
   schedule.scheduleJob('59 59 23 * * *',async function(){
     console.log('每天定时恢复票数:' + new Date());
