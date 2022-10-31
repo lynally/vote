@@ -15,7 +15,7 @@ app.use(bp.urlencoded({ extended: false }));
 app.use('/v1', require('./controllers/api_star'));
 app.use('/v2', require('./controllers/api'));
 
-app.get('/', function(req, res,next) {
+app.get('/', function(req, res) {
     res.send('Hello from root route.')
 });
 
